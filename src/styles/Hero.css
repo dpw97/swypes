@@ -1,0 +1,15 @@
+.hero {
+    height: 90vh;
+    background-repeat: no-repeat;
+}
+.hero-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.hero-content {
+    transform: translateX(-30%);
+    transform: translateY(50%);
+}
+
