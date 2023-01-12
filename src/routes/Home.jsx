@@ -1,13 +1,11 @@
-import React from 'react'
-import Logo from '../assets/hero.jpg'
-import Hero from '../components/Hero'
-import '../styles/Home.css'
+import React from 'react';
+import Hero from '../components/Hero';
+import '../styles/Home.css';
+
 function Home() {
   return (
-    <>
-       <Hero />
-    </>
-  )
+    <Hero />
+  );
 }
 
-export default Home
+export default Home;
