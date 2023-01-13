@@ -6,10 +6,10 @@ function Footer() {
   return (
     <div className="footer-container">
       <div className="footer-links">
+        <Link to="/">Home</Link>
         <Link to="about">About </Link>
+        <Link to="/restaurants">Restaurants</Link>
         <Link to="contact">Contact</Link>
-        <Link to="errorpage">Privacy Policy</Link>
-        <Link to="errorpage">Terms of Use</Link>
       </div>
       <div className="footer-copyright">
         Copyright ©
