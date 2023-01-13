@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: #fff;
+    background-color: #283044;
+    color: #ebf5ee;
     clear: both;
     height: 70px;
     position: relative;
@@ -12,7 +12,7 @@
 }
 
 .footer-links a {
-    color: #fff;
+    color: #ebf5ee;
     text-decoration: none;
     margin-right: 15px;
 }

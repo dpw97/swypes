@@ -12,7 +12,7 @@ function Hero() {
           <h1>Swypes</h1>
           <h2>Your one-stop shop for college meal plans</h2>
           <p>Sign up today to be notified when you can start picking up your meals </p>
-          <SignUp />
+          <div className="signup"><SignUp /></div>
         </div>
       </div>
     </div>
