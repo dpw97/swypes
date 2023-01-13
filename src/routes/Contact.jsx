@@ -1,5 +1,6 @@
 import React from 'react';
 import SignUp from '../components/SignUp';
+import '../styles/Contact.css';
 
 function Contact() {
   return (
