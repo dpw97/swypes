@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src={Logo} alt="swypes logo" />
+        <Link to="/"><img src={Logo} alt="swypes logo" /></Link>
       </div>
       <div className="navbar-links">
         <button className="navbar-toggle" type="button" onClick={handleSetDropDown}>
