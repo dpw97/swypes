@@ -1,27 +1,18 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import Logo from '../assets/hero.jpg';
+import Logo from '../../public/assets/hero.jpg';
 import '../styles/Hero.css';
+import SignUp from './SignUp';
 
 function Hero() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
-
-  const onSubmit = (data) => {
-    console.log(data);
-    // Perform email signup logic here
-  };
-
   return (
     <div className="hero" style={{ backgroundImage: `url(${Logo})` }}>
       <div className="hero-content-container">
         <div className="hero-content">
-          <h1>The meals you deserve</h1>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <input type="email" name="email" placeholder="Enter your email" {...register('email')} />
-            {errors.email && <span className="error">Email is required</span>}
-            <button type="submit">Sign Up</button>
-          </form>
+          <h1>Swypes</h1>
+          <h2>Your one-stop shop for college meal plans</h2>
+          <p>Sign up today to be notified when you can start picking up your meals </p>
+          <SignUp />
         </div>
       </div>
     </div>

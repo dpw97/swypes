@@ -14,7 +14,7 @@ export default function ErrorPage() {
       </p>
       <p>
         Click
-        <Link to="/">Here</Link>
+        <Link to="/"> Here </Link>
         to go home
       </p>
     </div>

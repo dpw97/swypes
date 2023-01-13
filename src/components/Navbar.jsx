@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/logo.png';
+import Logo from '../../public/assets/logo.png';
 import '../styles/Navbar.css';
 
 function Navbar() {
@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src={Logo} alt="swypes logo" height="100px" width="250px" />
+        <img src={Logo} alt="swypes logo" />
       </div>
       <div className="navbar-links">
         <button className="navbar-toggle" type="button" onClick={handleSetDropDown}>

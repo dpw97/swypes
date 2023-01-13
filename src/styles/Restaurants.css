@@ -1,3 +1,28 @@
 .restaurants {
-    height: 90vh;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px,100%), 1fr));    margin: 0;
+    padding: 0;
+    min-height: 90vh;
+}
+
+.restaurant {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-direction: column;
+}
+
+.restaurant-logo {
+    width: 200px;
+    height: 200px;
+    margin-right: 1rem;
+    border-radius: 10%;
+}
+
+.restaurant-info a {
+    color: blue;
+    text-decoration: none;
+
 }

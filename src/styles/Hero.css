@@ -9,6 +9,7 @@
     
 }
 .hero-content {
+    color: #999;
     transform: translateX(-30%);
     transform: translateY(50%);
 }

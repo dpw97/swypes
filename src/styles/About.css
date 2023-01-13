@@ -1,0 +1,19 @@
+.about-container {
+    margin: 50px auto; /* Add margin to the top and bottom and center it horizontally */
+    max-width: 800px; /* Add a maximum width */
+    padding: 20px; /* Add some padding to the container */
+    text-align: center;
+  }
+  
+  .about-container h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .about-container p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #444;
+    text-align: justify;
+  }
+  

@@ -8,7 +8,10 @@ function Root() {
   return (
     <div className="root">
       <Navbar />
-      <Outlet />
+      <div className="content">
+        <Outlet />
+      </div>
+
       <Footer />
     </div>
   );
