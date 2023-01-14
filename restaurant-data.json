@@ -4,14 +4,14 @@
         "name": "pizza",
         "phone": "+91 789654123",
         "website": "pizza.com",
-        "image": "../../public/assets/restaurant-logo.jpg"
+        "image": "../../assets/restaurant-logo.jpg"
     },
     {
         "id": 2,
         "name": "tacos",
         "phone": "+91 123456987",
         "website": "tacos.com",
-        "image": "../../public/assets/restaurant-logo.jpg"
+        "image": "../../assets/restaurant-logo.jpg"
 
     },
     {
@@ -19,7 +19,7 @@
         "name": "tacos",
         "phone": "+91 123456987",
         "website": "tacos.com",
-        "image": "../../public/assets/restaurant-logo.jpg"
+        "image": "../../assets/restaurant-logo.jpg"
 
     },
     {
@@ -27,7 +27,7 @@
         "name": "tacos",
         "phone": "+91 123456987",
         "website": "tacos.com",
-        "image": "../../public/assets/restaurant-logo.jpg"
+        "image": "../../assets/restaurant-logo.jpg"
 
     },
     {
@@ -35,7 +35,7 @@
         "name": "tacos",
         "phone": "+91 123456987",
         "website": "tacos.com",
-        "image": "../../public/assets/restaurant-logo.jpg"
+        "image": "../../assets/restaurant-logo.jpg"
 
     }
 ]

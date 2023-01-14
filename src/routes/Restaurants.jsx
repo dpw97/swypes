@@ -1,8 +1,14 @@
-import React from 'react';
-import restaurants from '../../restaurant-data.json';
+import React, { useState, useEffect } from 'react';
 import '../styles/Restaurants.css';
 
 function Restaurants() {
+  const [restaurants, setRestaurants] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/api/restaurants')
+    .then(res => res.json())
+    .then(data => setRestaurants(data))
+  }, []);
   return (
     <div className="container">
       <h2 className="header">Select meals from your favorite restaurants</h2>
