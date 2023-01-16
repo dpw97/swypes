@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Root from './routes/Root';
-import About from './routes/About';
-import Home from './routes/Home';
-import Contact from './routes/Contact';
-import Menu from './routes/Menu';
-import Restaurants from './routes/Restaurants';
-import ErrorPage from './ErrorPage';
+import Root from './routes/Root.jsx';
+import About from './routes/About.jsx';
+import Home from './routes/Home.jsx';
+import Contact from './routes/Contact.jsx';
+import Menu from './routes/Menu.jsx';
+import Restaurants from './routes/Restaurants.jsx';
+import ErrorPage from './ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {

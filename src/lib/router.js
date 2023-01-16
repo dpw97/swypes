@@ -1,6 +1,4 @@
 const express = require('express');
-const cors = require('cors');
-
 const router = express.Router();
 router.use(express.json());
 const restaurants = [
@@ -9,14 +7,14 @@ const restaurants = [
         "name": "pizza",
         "phone": "+91 789654123",
         "website": "pizza.com",
-        "image": "../../assets/restaurant-logo.jpg"
+        "image": "../assets/restaurant-logo.jpg"
     },
     {
         "id": 2,
         "name": "tacos",
         "phone": "+91 123456987",
         "website": "tacos.com",
-        "image": "../../assets/restaurant-logo.jpg"
+        "image": "../assets/restaurant-logo.jpg"
 
     },
     {
@@ -24,7 +22,7 @@ const restaurants = [
         "name": "tacos",
         "phone": "+91 123456987",
         "website": "tacos.com",
-        "image": "../../assets/restaurant-logo.jpg"
+        "image": "../assets/restaurant-logo.jpg"
 
     },
     {
@@ -32,7 +30,7 @@ const restaurants = [
         "name": "tacos",
         "phone": "+91 123456987",
         "website": "tacos.com",
-        "image": "../../assets/restaurant-logo.jpg"
+        "image": "../assets/restaurant-logo.jpg"
 
     },
     {
@@ -40,7 +38,7 @@ const restaurants = [
         "name": "tacos",
         "phone": "+91 123456987",
         "website": "tacos.com",
-        "image": "../../assets/restaurant-logo.jpg"
+        "image": "../assets/restaurant-logo.jpg"
 
     }
 ]

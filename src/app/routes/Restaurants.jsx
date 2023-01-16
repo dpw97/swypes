@@ -5,7 +5,7 @@ function Restaurants() {
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/restaurants')
+    fetch('/api/restaurants')
     .then(res => res.json())
     .then(data => setRestaurants(data))
   }, []);
@@ -16,7 +16,7 @@ function Restaurants() {
       <ul className="restaurants">
         {restaurants.map((restaurant) => (
           <li key={restaurant.id} className="restaurant">
-            <img src={restaurant.image} alt="restaurant logo" className="restaurant-logo" />
+            <img src="https://i.ibb.co/hFjLyDn/restaurant-logo.jpg" alt="restaurant logo" className="restaurant-logo" />
             <div className="restaurant-info">
               <h3>{restaurant.restaurant}</h3>
               <p>
