@@ -1,19 +1,57 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import cors from 'cors'
-import restaurants from '../swypes/restaurant-data.json' assert {type: "json"}
-const app = express();
-app.use(bodyParser.json());
-app.use(cors());
+const express = require('express');
+const cors = require('cors');
 
+const router = express.Router();
+router.use(express.json());
+const restaurants = [
+    {
+        "id": 1,
+        "name": "pizza",
+        "phone": "+91 789654123",
+        "website": "pizza.com",
+        "image": "../../assets/restaurant-logo.jpg"
+    },
+    {
+        "id": 2,
+        "name": "tacos",
+        "phone": "+91 123456987",
+        "website": "tacos.com",
+        "image": "../../assets/restaurant-logo.jpg"
+
+    },
+    {
+        "id": 3,
+        "name": "tacos",
+        "phone": "+91 123456987",
+        "website": "tacos.com",
+        "image": "../../assets/restaurant-logo.jpg"
+
+    },
+    {
+        "id": 4,
+        "name": "tacos",
+        "phone": "+91 123456987",
+        "website": "tacos.com",
+        "image": "../../assets/restaurant-logo.jpg"
+
+    },
+    {
+        "id": 5,
+        "name": "tacos",
+        "phone": "+91 123456987",
+        "website": "tacos.com",
+        "image": "../../assets/restaurant-logo.jpg"
+
+    }
+]
 
 // GET endpoint to retrieve all restaurants
-app.get('/api/restaurants', (req, res) => {
+router.get('/restaurants', (req, res) => {
     res.json(restaurants);
 });
 
 // GET endpoint to retrieve a specific restaurant by ID
-app.get('/api/restaurants/:id', (req, res) => {
+router.get('/restaurants/:id', (req, res) => {
     const restaurant = restaurants.find(r => r.id === parseInt(req.params.id));
     if (!restaurant) {
         res.status(404).send('The restaurant with the given ID was not found.');
@@ -23,7 +61,7 @@ app.get('/api/restaurants/:id', (req, res) => {
 });
 
 // POST endpoint to add a new restaurant
-app.post('/api/restaurants', (req, res) => {
+router.post('/restaurants', (req, res) => {
     const restaurant = {
         id: restaurants.length + 1,
         name: req.body.name,
@@ -36,7 +74,7 @@ app.post('/api/restaurants', (req, res) => {
 });
 
 // PUT endpoint to update a specific restaurant by ID
-app.put('/api/restaurants/:id', (req, res) => {
+router.put('/restaurants/:id', (req, res) => {
     const restaurant = restaurants.find(r => r.id === parseInt(req.params.id));
     if (!restaurant) {
         res.status(404).send('The restaurant with the given ID was not found.');
@@ -51,7 +89,7 @@ app.put('/api/restaurants/:id', (req, res) => {
 });
 
 // DELETE endpoint to delete a specific restaurant by ID
-app.delete('/api/restaurants/:id', (req, res) => {
+router.delete('/restaurants/:id', (req, res) => {
     const restaurant = restaurants.find(r => r.id === parseInt(req.params.id));
     if (!restaurant) {
         res.status(404).send('The restaurant with the given ID was not found.');
@@ -63,7 +101,4 @@ app.delete('/api/restaurants/:id', (req, res) => {
     res.json(restaurant);
 });
 
-const PORT = process.env.PORT || 3001
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
+module.exports = router;

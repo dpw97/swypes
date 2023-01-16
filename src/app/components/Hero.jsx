@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import Logo from '../../assets/hero.jpg';
+import Logo from '../../../assets/hero.jpg';
 import '../styles/Hero.css';
 import SignUp from './SignUp';
 
