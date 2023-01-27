@@ -6,20 +6,19 @@ function Restaurants() {
 
   useEffect(() => {
     fetch('/api/restaurants')
-      .then((res) => res.json())
-      .then((data) => setRestaurants(data));
+    .then(res => res.json())
+    .then(data => setRestaurants(data))
   }, []);
-
+  
   return (
     <div className="container">
       <h2 className="header">Select meals from your favorite restaurants</h2>
       <ul className="restaurants">
         {restaurants.map((restaurant) => (
-          // eslint-disable-next-line no-underscore-dangle
-          <li key={restaurant._id} className="restaurant">
+          <li key={restaurant.id} className="restaurant">
             <img src="https://i.ibb.co/hFjLyDn/restaurant-logo.jpg" alt="restaurant logo" className="restaurant-logo" />
-            <div className="restaurant-info" key={restaurant.id}>
-              <h3>{restaurant.name}</h3>
+            <div className="restaurant-info">
+              <h3>{restaurant.restaurant}</h3>
               <p>
                 Phone:
                 {' '}

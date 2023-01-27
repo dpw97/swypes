@@ -48,7 +48,7 @@
 @media (max-width: 600px) {
       .navbar-toggle {
         display: block;
-      }
+  }
   .navbar-items {
         display: none;
   }

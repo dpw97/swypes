@@ -6,11 +6,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
 }
 .hero-content {
     color: #ebf5ee;
-    text-shadow: 1px 1px 2px #000000;
+    transform: translateX(-30%);
     transform: translateY(50%);
     text-align: center;
 }
