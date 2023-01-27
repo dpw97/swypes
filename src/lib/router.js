@@ -1,103 +1,86 @@
 const express = require('express');
+const RestaurantDB = require('./RestaurantDB');
 
 const router = express.Router();
+
 router.use(express.json());
-const restaurants = [
-  {
-    id: 1,
-    name: 'pizza',
-    phone: '+91 789654123',
-    website: 'pizza.com',
-    image: '../assets/restaurant-logo.jpg',
-  },
-  {
-    id: 2,
-    name: 'tacos',
-    phone: '+91 123456987',
-    website: 'tacos.com',
-    image: '../assets/restaurant-logo.jpg',
-
-  },
-  {
-    id: 3,
-    name: 'tacos',
-    phone: '+91 123456987',
-    website: 'tacos.com',
-    image: '../assets/restaurant-logo.jpg',
-
-  },
-  {
-    id: 4,
-    name: 'tacos',
-    phone: '+91 123456987',
-    website: 'tacos.com',
-    image: '../assets/restaurant-logo.jpg',
-
-  },
-  {
-    id: 5,
-    name: 'tacos',
-    phone: '+91 123456987',
-    website: 'tacos.com',
-    image: '../assets/restaurant-logo.jpg',
-
-  },
-];
 
 // GET endpoint to retrieve all restaurants
 router.get('/restaurants', (req, res) => {
-  res.json(restaurants);
+  const db = RestaurantDB.getDb();
+  db.collection('Restaurants')
+    .find()
+    .toArray((err, result) => {
+      if (err) {
+        res.status(400).send('Error');
+      } else {
+        res.json(result);
+      }
+    });
 });
 
-// GET endpoint to retrieve a specific restaurant by ID
-router.get('/restaurants/:id', (req, res) => {
-  const restaurant = restaurants.find((r) => r.id === parseInt(req.params.id));
-  if (!restaurant) {
-    res.status(404).send('The restaurant with the given ID was not found.');
-    return;
-  }
-  res.json(restaurant);
+// GET endpoint to retrieve a specific restaurant by name
+router.get('/restaurants/:name', (req, res) => {
+  const db = RestaurantDB.getDb();
+  const { name } = req.params;
+  db.collection('Restaurants').findOne({ name }, (err, result) => {
+    if (err) {
+      res.status(404).send('The restaurant with the given name was not found.');
+    } else {
+      res.json(result);
+    }
+  });
 });
+// POST endpoint to signup with emai
 
 // POST endpoint to add a new restaurant
 router.post('/restaurants', (req, res) => {
+  const db = RestaurantDB.getDb();
   const restaurant = {
-    id: restaurants.length + 1,
     name: req.body.name,
     phone: req.body.phone,
     website: req.body.website,
     image: req.body.image,
   };
-  restaurants.push(restaurant);
-  res.json(restaurant);
+  db.collection('Restaurants').insertOne(restaurant, (err, result) => {
+    if (err) {
+      res.status(400).send('Error');
+    } else {
+      res.json(result.ops[0]);
+    }
+  });
 });
 
-// PUT endpoint to update a specific restaurant by ID
-router.put('/restaurants/:id', (req, res) => {
-  const restaurant = restaurants.find((r) => r.id === parseInt(req.params.id));
-  if (!restaurant) {
-    res.status(404).send('The restaurant with the given ID was not found.');
-    return;
-  }
-
-  restaurant.name = req.body.name;
-  restaurant.phone = req.body.phone;
-  restaurant.website = req.body.website;
-  restaurant.image = req.body.image;
-  res.json(restaurant);
+// PUT endpoint to update a specific restaurant by name
+router.put('/restaurants/:name', (req, res) => {
+  const db = RestaurantDB.getDb();
+  const { name } = req.params;
+  const restaurant = {
+    name: req.body.name,
+    phone: req.body.phone,
+    website: req.body.website,
+    image: req.body.image,
+  };
+  db.collection('Restaurants').updateOne({ name }, { $set: restaurant }, (err, result) => {
+    if (err) {
+      res.status(404).send('The restaurant with the given name was not found.');
+    } else {
+      res.json(result);
+    }
+  });
 });
 
-// DELETE endpoint to delete a specific restaurant by ID
+// DELETE endpoint to delete a specific restaurant by id
 router.delete('/restaurants/:id', (req, res) => {
-  const restaurant = restaurants.find((r) => r.id === parseInt(req.params.id));
-  if (!restaurant) {
-    res.status(404).send('The restaurant with the given ID was not found.');
-    return;
-  }
-
-  const index = restaurants.indexOf(restaurant);
-  restaurants.splice(index, 1);
-  res.json(restaurant);
+  const db = RestaurantDB.getDb();
+  const { id } = req.params;
+  db.collection('Restaurants').deleteOne({ _id: id }, (err, result) => {
+    if (err) {
+      res.status(404).send('The restaurant with the given name was not found.');
+    } else {
+      res.status(200).json(result);
+    }
+  });
 });
 
 module.exports = router;

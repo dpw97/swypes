@@ -1,25 +1,19 @@
-import { React, useState } from 'react';
+import { React } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../../assets/logo.png';
 import '../styles/Navbar.css';
 
 function Navbar() {
-  const [dropDown, setDropDown] = useState(false);
-
-  function handleSetDropDown() {
-    setDropDown(!dropDown);
-  }
-
   return (
     <nav className="navbar">
       <div className="navbar-logo">
         <Link to="/"><img src={Logo} alt="swypes logo" /></Link>
       </div>
       <div className="navbar-links">
-        <button className="navbar-toggle" type="button" onClick={handleSetDropDown}>
+        <button className="navbar-toggle" type="button">
           <Link to="menu">Menu</Link>
         </button>
-        <ul className={`navbar-items ${dropDown ? 'navbar-items-open' : ''}`}>
+        <ul className="navbar-items">
           <li className="navbar-item">
             <Link to="/">Home</Link>
           </li>
