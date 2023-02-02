@@ -6,10 +6,10 @@ function Restaurants() {
 
   useEffect(() => {
     fetch('/api/restaurants')
-    .then(res => res.json())
-    .then(data => setRestaurants(data))
+      .then((res) => res.json())
+      .then((data) => setRestaurants(data));
   }, []);
-  
+
   return (
     <div className="container">
       <h2 className="header">Select meals from your favorite restaurants</h2>
