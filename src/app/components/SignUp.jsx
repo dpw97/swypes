@@ -7,12 +7,19 @@ function SignUp() {
   const [submitted, setSubmitted] = useState(false);
   const onSubmit = (data) => {
     setSubmitted(true);
-    console.log(data);
-    // Perform email signup logic here
+    fetch('/api/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => console.log(res.status))
+      .catch((error) => console.error('error', error));
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" name="email" placeholder="Enter your email" {...register('email', { pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })} />
+      {!submitted && <input type="text" name="email" placeholder="Enter your email" {...register('email', { pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })} />}
       {errors.email && <span className="error">Enter a valid Email</span>}
       {submitted && <div className="success">Thank you for signing up! </div>}
       {!submitted && <button type="submit">Enter</button>}
