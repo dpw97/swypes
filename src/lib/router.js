@@ -1,6 +1,5 @@
 const express = require('express');
-const RestaurantDB = require('./RestaurantDB');
-const EmailDB = require('./EmailDB');
+const GetDB = require('./GetDB');
 
 const router = express.Router();
 
@@ -8,7 +7,7 @@ router.use(express.json());
 
 // GET endpoint to retrieve all restaurants
 router.get('/restaurants', (req, res) => {
-  const db = RestaurantDB.getDb();
+  const db = GetDB.getDb('RestaurantDB');
   db.collection('Restaurants')
     .find()
     .toArray((err, result) => {
@@ -22,7 +21,7 @@ router.get('/restaurants', (req, res) => {
 
 // GET endpoint to retrieve a specific restaurant by name
 router.get('/restaurants/:name', (req, res) => {
-  const db = RestaurantDB.getDb();
+  const db = GetDB.getDb('RestaurantDB');
   const name = req.params;
   db.collection('Restaurants').findOne({ name }, (err, result) => {
     if (err) {
@@ -34,7 +33,7 @@ router.get('/restaurants/:name', (req, res) => {
 });
 // POST endpoint to signup with email
 router.post('/signup', (req, res) => {
-  const db = EmailDB.getDb();
+  const db = GetDB.getDb('EmailDB');
   const email = {
     name: req.body.email,
   };
@@ -50,7 +49,7 @@ router.post('/signup', (req, res) => {
 });
 // POST endpoint to add a new restaurant
 router.post('/restaurants', (req, res) => {
-  const db = RestaurantDB.getDb();
+  const db = GetDB.getDb('RestaurantDB');
   const restaurant = {
     name: req.body.name,
     phone: req.body.phone,
@@ -70,7 +69,7 @@ router.post('/restaurants', (req, res) => {
 
 // PUT endpoint to update a specific restaurant by name
 router.put('/restaurants/:name', (req, res) => {
-  const db = RestaurantDB.getDb();
+  const db = GetDB.getDb('RestaurantDB');
   const { name } = req.params;
   const restaurant = {
     name: req.body.name,
@@ -89,7 +88,7 @@ router.put('/restaurants/:name', (req, res) => {
 
 // DELETE endpoint to delete a specific restaurant by id
 router.delete('/restaurants/:id', (req, res) => {
-  const db = RestaurantDB.getDb();
+  const db = GetDB.getDb('RestaurantDB');
   const { id } = req.params;
   db.collection('Restaurants').deleteOne({ _id: id }, (err, result) => {
     if (err) {
