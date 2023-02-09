@@ -46,7 +46,7 @@
       cursor: pointer;
 }
 @media (max-width: 600px) {
-      .navbar-toggle {
+  .navbar-toggle {
         display: block;
       }
   .navbar-items {

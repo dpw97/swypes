@@ -32,7 +32,7 @@ router.get('/restaurants/:name', (req, res) => {
     }
   });
 });
-// POST endpoint to signup with emai
+// POST endpoint to signup with email
 router.post('/signup', (req, res) => {
   const db = EmailDB.getDb();
   const email = {
