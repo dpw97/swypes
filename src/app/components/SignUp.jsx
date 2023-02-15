@@ -7,6 +7,9 @@ function SignUp() {
   const [submitted, setSubmitted] = useState(false);
   const onSubmit = (data) => {
     setSubmitted(true);
+    if (data == null) {
+      return;
+    }
     fetch('/api/signup', {
       method: 'POST',
       headers: {

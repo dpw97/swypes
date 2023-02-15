@@ -12,7 +12,7 @@ router.get('/restaurants', (req, res) => {
     .find()
     .toArray((err, result) => {
       if (err) {
-        res.status(400).send('Error');
+        res.status(400).send(err);
       } else {
         res.json(result);
       }
