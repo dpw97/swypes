@@ -14,7 +14,7 @@ router.get('/restaurants', (req, res) => {
       if (err) {
         res.status(400).send(err);
       } else {
-        res.json(result);
+        res.status(200).send(result);
       }
     });
 });
@@ -22,12 +22,14 @@ router.get('/restaurants', (req, res) => {
 // GET endpoint to retrieve a specific restaurant by name
 router.get('/restaurants/:name', (req, res) => {
   const db = GetDB.getDb('RestaurantDB');
-  const name = req.params;
-  db.collection('Restaurants').findOne({ name }, (err, result) => {
+  const name = {
+    name: req.params.name,
+  };
+  db.collection('Restaurants').findOne(name, (err, result) => {
     if (err) {
       res.status(404).send('The restaurant with the given name was not found.');
     } else {
-      res.json(result);
+      res.status(200).send(result);
     }
   });
 });
@@ -39,11 +41,11 @@ router.post('/signup', (req, res) => {
   };
   db
     .collection('Emails')
-    .insertOne(email, (err) => {
+    .insertOne(email, (err, result) => {
       if (err) {
-        res.status(400).send('error inserting email');
+        res.status(400).send(err);
       } else {
-        res.status(200).send('success inserting email');
+        res.status(200).send(result);
       }
     });
 });
