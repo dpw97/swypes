@@ -1,14 +1,12 @@
+const { defineConfig } = require('vite');
+const react = require('@vitejs/plugin-react');
 
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 dotenv.config();
-
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
 const PORT = process.env.PORT || 8080;
 
 // https://vitejs.dev/config/
-export default defineConfig({
+module.exports = defineConfig({
   plugins: [react()],
   server: {
     proxy: {
