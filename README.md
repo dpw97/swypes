@@ -1,6 +1,6 @@
 # Swypes
 
-Swypes is a website for a meal planning company that is currently under construction. It was built with MongoDB, Express, React, and Node.js. 
+Swypes is a website for a meal planning company that is currently under construction. It is being built with MongoDB, Express, React, and Node.js. 
 
 ## Table of Contents
 
