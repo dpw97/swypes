@@ -63,7 +63,6 @@ function Week() {
       </div>
       <div className="days">
         <Tabs defaultActiveKey="1" items={days} onChange={onChange} />
-
       </div>
 
     </div>
