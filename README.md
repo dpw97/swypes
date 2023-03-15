@@ -15,9 +15,9 @@ To get started with Swypes, clone this repository to your local machine and run 
 
 ## Usage
 
-Swypes uses Vite to bundle and serve the client-side code. To start the development server for the client, run `npm run client:dev`. This will start the Vite dev server at `http://localhost:3000`.
+Swypes uses Vite to bundle and serve the client-side code. To start the development server for the client, run `npm run client:dev`. This will start the Vite dev server at `http://localhost:5173`.
 
-To start the development server for the server-side code, run `npm run server:dev`. This will start the server at `http://localhost:5000`.
+To start the development server for the server-side code, run `npm run server:dev`. This will start the server at `http://localhost:8080`.
 
 You can also run both servers concurrently using `npm run dev`.
 
