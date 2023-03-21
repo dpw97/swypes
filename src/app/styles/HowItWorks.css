@@ -1,9 +1,24 @@
-.container {
+.step-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 50px auto; 
-    max-width: 1200px; 
+    max-width: 100%; 
     text-align: center;
     color: #283044;
+    font-size: larger;
+}
+.steps {
+    display: flex;
+    flex-direction: row;
+}
+.step {
+    padding: 20px;
+    
+}
+@media (max-width: 600px) {
+    .steps {
+        display: flex;
+        flex-direction: column;
+    }
 }
