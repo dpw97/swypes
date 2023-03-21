@@ -14,11 +14,12 @@
 }
 .step {
     padding: 20px;
+
     
 }
-@media (max-width: 600px) {
+@media (max-width: 992px) {
     .steps {
         display: flex;
         flex-direction: column;
     }
-}
+}   

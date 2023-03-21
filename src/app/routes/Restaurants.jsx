@@ -11,7 +11,7 @@ function Restaurants() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="restaurant-container">
       <h2 className="header">Select meals from your favorite restaurants</h2>
       <ul className="restaurants">
         {restaurants.map((restaurant) => (
