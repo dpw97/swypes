@@ -1,5 +1,6 @@
 import { React } from 'react';
 import { Link } from 'react-router-dom';
+import { RxHamburgerMenu } from 'react-icons/rx';
 import Logo from '../../../assets/logo.png';
 import '../styles/Navbar.css';
 
@@ -11,7 +12,9 @@ function Navbar() {
       </div>
       <div className="navbar-links">
         <button className="navbar-toggle" type="button">
-          <Link to="menu">Menu</Link>
+          <Link to="menu">
+            <RxHamburgerMenu />
+          </Link>
         </button>
         <ul className="navbar-items">
           <li className="navbar-item">
