@@ -23,7 +23,7 @@ function Hero() {
           <h2>Your one-stop shop for college meal plans</h2>
           <h3>Let us handle your meals so you can focus on your education</h3>
           <p>Sign up today to be notified when you can start picking up your meals </p>
-          <Link to="contact"><Button type="primary">Get Started</Button></Link>
+          <Link to="getstarted"><Button type="primary">Get Started</Button></Link>
         </div>
       </div>
     </div>

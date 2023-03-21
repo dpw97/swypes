@@ -8,8 +8,8 @@ function Footer() {
       <div className="footer-links">
         <Link to="/">Home</Link>
         <Link to="about">About </Link>
-        <Link to="/restaurants">Restaurants</Link>
-        <Link to="contact">Contact</Link>
+        <Link to="restaurants">Restaurants</Link>
+        <Link to="getstarted">Get Started</Link>
       </div>
       <div className="footer-copyright">
         Copyright ©
