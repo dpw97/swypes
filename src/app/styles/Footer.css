@@ -4,17 +4,18 @@
     align-items: center;
     background-color: #283044;
     color: #ebf5ee;
-    clear: both;
     height: 70px;
     position: relative;
     bottom: 0;
     width: 100%;
+
 }
 
 .footer-links a {
     color: #ebf5ee;
     text-decoration: none;
     margin-right: 15px;
+    margin-left: 15px;
 }
 
 .footer-links a:hover {
@@ -24,4 +25,11 @@
 .footer-copyright {
     font-size: 12px;
     padding-right: 20px;
+}
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
 }
