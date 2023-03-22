@@ -1,6 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
+import { Button } from 'antd';
+import '../styles/SignUp.css';
 
 function SignUp() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -25,7 +27,7 @@ function SignUp() {
       {!submitted && <input type="text" name="email" placeholder="Enter your email" {...register('email', { pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })} />}
       {errors.email && <span className="error">Enter a valid Email</span>}
       {submitted && <div className="success">Thank you for signing up! </div>}
-      {!submitted && <button type="submit">Enter</button>}
+      {!submitted && <Button type="primary">Enter</Button>}
     </form>
   );
 }
