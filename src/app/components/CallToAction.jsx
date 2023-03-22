@@ -24,8 +24,7 @@ function CallToAction() {
         <img className="cta-image" src={Takeout2} width="600px" height="400px" alt="salmon takeout" />
         <div className="cta-2-info">
           <h1>We&apos;ve got you covered</h1>
-          <p>Check out our selection</p>
-          <p>of the best restaurants in your area.</p>
+          <p>Check out our selection of the best restaurants in your area.</p>
           <Link to="restaurants">
             <Button type="primary">Restaurants</Button>
           </Link>
