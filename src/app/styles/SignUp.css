@@ -1,3 +1,18 @@
-Button {
-    margin-top: 12px;
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: -24px;
+}
+button {
+    padding: 5px 10px;
+    margin-top: 10px;
+    color: #ebf5ee;
+    background-color: #283044;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #373353;
 }
