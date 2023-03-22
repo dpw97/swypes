@@ -25,7 +25,7 @@ function CallToAction() {
         <div className="cta-2-info">
           <h1>We&apos;ve got you covered</h1>
           <p>Check out our selection</p>
-          <p> of the best restaurants in your area. </p>
+          <p>of the best restaurants in your area.</p>
           <Link to="restaurants">
             <Button type="primary">Restaurants</Button>
           </Link>
