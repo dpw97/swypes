@@ -17,14 +17,15 @@ function CallToAction() {
           </Link>
         </div>
         <div className="image1">
-          <img src={Takeout1} width="600px" height="400px" alt="takeout box" />
+          <img className="cta-image" src={Takeout1} width="600px" height="400px" alt="takeout box" />
         </div>
       </div>
       <div className="cta">
-        <img src={Takeout2} width="600px" height="400px" alt="salmon takeout" />
+        <img className="cta-image" src={Takeout2} width="600px" height="400px" alt="salmon takeout" />
         <div className="cta-2-info">
           <h1>We've got you covered</h1>
-          <p>We partner with the best restaurants in your area. </p>
+          <p>Check out our selection</p>
+          <p> of the best restaurants in your area. </p>
           <Link to="restaurants">
             <Button type="primary">Restaurants</Button>
           </Link>
