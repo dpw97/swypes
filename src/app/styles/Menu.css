@@ -1,3 +1,13 @@
+
+.menu-close {
+   border: 2px solid #333; 
+   border-radius: 50%;
+   height: 1em;
+   width: 16px;
+   padding: 5px;
+   margin-top: 10vw;
+   margin-left: 80vw;
+}
 .menu-items {
     font-family: "Nunito", sans-serif;
     list-style: none;
@@ -6,7 +16,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0;
-    margin-top: 33vh;
+    margin-top: 10vh;
 }
 
 .menu-item {

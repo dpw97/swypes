@@ -1,10 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Menu.css';
+import { GrClose } from 'react-icons/gr';
 
 function Menu() {
+  const navigate = useNavigate();
   return (
-    <div>
+    <div className="menu-container">
+      <div className="menu-close">
+        <GrClose onClick={() => navigate(-1)} />
+      </div>
       <ul className="menu-items">
         <li className="menu-item">
           <Link to="/">Home</Link>
